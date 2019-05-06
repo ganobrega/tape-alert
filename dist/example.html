@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.26/css/bulma.css">
+    <link rel="stylesheet" href="https://bulma.io/css/bulma-docs.min.css">
+    <link rel="stylesheet" href="tape.css">
+    <title>Tape Alert</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+
+    body, html{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100% !important;
+        background: #fefefe !important;
+    }
+
+    #example{
+        position: absolute;
+        max-width: 800px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+    }
+
+    #myForm label.error{
+        display: none !important;
+    }
+
+    #errors{
+        margin-bottom: 1em;
+    }
+
+</style>
+<body class="">
+
+    <div id="example">
+
+        <div id="errors"></div>
+
+        <form id="myForm" action="">
+
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="fullname" placeholder="e.g Alex Smith" required>
+                </div>
+            </div>
+                
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" name="email" placeholder="e.g. alexsmith@gmail.com" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea class="textarea" name="message" placeholder="Textarea" required></textarea>
+                </div>
+                </div>
+                
+                <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button id="submit" class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button class="button is-text">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="./tape.jquery.js"></script>
+
+    <script>
+    jQuery.validator.messages.required = 'Fill in all required fields';
+
+    var validatorOptions = { };
+
+    $('#myForm').validate(validatorOptions);
+
+    $('#submit').click(function(){
+        if($('#myForm').valid()){
+
+        }else{
+            var errors = $('#myForm').validate().errorList.reduce(function(p, c, i){
+                if(!p.includes(c.message)){
+                    p.push(c.message);
+                }
+                return p;
+            }, []);
+
+            console.log(errors);
+            
+            $('#errors').tape({
+                title: 'Error',
+                text: errors,
+                status: 'error',
+            });
+        }
+    })
+
+
+    </script>
+    
+</body>
+</html>

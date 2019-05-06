@@ -1,0 +1,81 @@
+.tape-aside {
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.tape-icon {
+    width: 100%;
+    height: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    padding: 0;
+    position: relative;
+    box-sizing: content-box;
+}
+
+.tape-icon--error {
+    border-color: var(--tape-error);
+    animation: animateErrorIcon 0.5s;
+}
+
+.tape-icon--error__x-mark {
+    position: relative;
+    display: block;
+    animation: animateXMark 0.5s;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.tape-icon--error__line {
+    position: absolute;
+    height: 0;
+    width: 60%;
+    background-color: var(--tape-error);
+    display: block;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--tape-error);
+}
+
+.tape-icon--error__line--left {
+    transform: rotate(45deg);
+    left: 21%;
+}
+
+.tape-icon--error__line--right {
+    transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 21%;
+}
+
+@keyframes animateErrorIcon {
+    from {
+        transform: rotateX(100deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes animateXMark {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

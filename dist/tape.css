@@ -1,0 +1,61 @@
+:root {
+    --tape-default: #969aa8;
+    --tape-error: #F27474;
+    --tape-success: #A5DC86;
+    --tape-info: #C9DAE1;
+    --tape-warning: #F8BB86;
+}
+
+.tape-alert{
+    display: block;
+    background: #FBFBFB;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    border-left: 5px solid var(--tape-default);
+    box-shadow: 1px 2px 2px #F0F0F0;
+    
+}
+
+.tape-title{
+    color: var(--tape-default);
+    font-weight: bold;
+}
+
+/* Status */
+
+.tape-alert.tape--error {
+    border-left: 5px solid var(--tape-error);
+}
+
+.tape-alert.tape--error .tape-title{
+    color: var(--tape-error);
+    font-weight: bold;
+}
+
+.tape-alert.tape--success {
+    border-left: 5px solid var(--tape-success);
+}
+
+.tape-alert.tape--success .tape-title{
+    color: var(--tape-success);
+    font-weight: bold;
+}
+
+.tape-alert.tape--warning {
+    border-left: 5px solid var(--tape-warning);
+}
+
+.tape-alert.tape--warning .tape-title{
+    color: var(--tape-warning);
+    font-weight: bold;
+}
+
+.tape-alert.tape--info {
+    border-left: 5px solid var(--tape-info);
+}
+
+.tape-alert.tape--info .tape-title{
+    color: var(--tape-info);
+    font-weight: bold;
+}
