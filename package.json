@@ -1,7 +1,7 @@
 {
   "name": "tape-alert",
   "description": "Simple inline alert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/ganobrega/tape-alert.git",
   "license": "MIT",
   "author": {
