@@ -61,6 +61,7 @@ $('#warnings').tape({
 ## Todo
 
 - Delay to hide the tape.
+- Custom classes.
 
 ## Credits
 
