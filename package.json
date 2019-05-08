@@ -3,5 +3,27 @@
   "description": "Simple inline alert",
   "version": "1.0.1",
   "repository": "https://github.com/ganobrega/tape-alert.git",
-  "license": "MIT"
+  "license": "MIT",
+  "author": {
+    "name": "Gabriel Nobrega",
+    "email": "",
+    "url": "https://github.io/ganobrega"
+  },
+  "scripts": {
+    "deploy": "gh-pages-deploy"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ],
+    "noprompt": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "gh-pages-deploy": "^0.5.1"
+  }
 }
