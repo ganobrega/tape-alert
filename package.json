@@ -11,12 +11,12 @@
   },
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "clean": "rimraf *"
+    "clean-source": "rimraf node_modules/ README.md yarn.lock package.json"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
     "prep": [
-      "clean"
+      "clean-source"
     ],
     "noprompt": true
   },
