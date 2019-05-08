@@ -11,16 +11,13 @@
   },
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "deploy:prep": "rm package.json",
-    "deploy:post": "rm -rf dist/"
+    "clean-source": "rimraf README.md src webroot package.json"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "prep": [
-      "deploy:prep"
-    ],
+    "commit": "gh-pages update",
     "post": [
-      "deploy:post"
+      "clean-source"
     ],
     "noprompt": true
   },
