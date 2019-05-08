@@ -11,8 +11,8 @@
   },
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "deploy:prep": "",
-    "deploy:post": ""
+    "deploy:prep": "rm package.json",
+    "deploy:post": "rm -rf dist/"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
