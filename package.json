@@ -15,7 +15,7 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "prep": [
+    "post": [
       "clean-source"
     ],
     "noprompt": true
