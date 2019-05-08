@@ -11,8 +11,8 @@
   },
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "deploy:prep": "rimraf README.md yarn.lock package.json node_modules/",
-    "deploy:post": "rimraf dist/"
+    "deploy:prep": "",
+    "deploy:post": ""
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
