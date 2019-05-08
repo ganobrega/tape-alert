@@ -10,16 +10,18 @@
     "url": "https://github.io/ganobrega"
   },
   "scripts": {
-    "deploy": "gh-pages-deploy"
+    "deploy": "gh-pages-deploy",
+    "clean": "rimraf *"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
     "prep": [
-      "build"
+      "clean"
     ],
     "noprompt": true
   },
   "devDependencies": {
-    "gh-pages-deploy": "^0.5.1"
+    "gh-pages-deploy": "^0.5.1",
+    "rimraf": "^2.6.3"
   }
 }
