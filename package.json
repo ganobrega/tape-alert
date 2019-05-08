@@ -11,7 +11,7 @@
   },
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "clean-source": "rimraf README.md src webroot package.json"
+    "clean-source": "rimraf README.md src webroot package.json dist/ .gitignore yarn.lock"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
