@@ -22,7 +22,7 @@
     "post": [
       "deploy:post"
     ],
-    "noprompt": false
+    "noprompt": true
   },
   "devDependencies": {
     "gh-pages-deploy": "^0.5.1",
